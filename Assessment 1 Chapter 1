@@ -1,0 +1,7 @@
+# the code below almost works
+
+# the code below almost works
+prinq("hello world")
+
+Solution -----------
+print("hello world")
