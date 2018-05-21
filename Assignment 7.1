@@ -1,0 +1,20 @@
+# Use words.txt as the file name
+fname = input("Enter file name: ")
+fh = open(fname)
+
+Solution ----
+fname = input("Enter the Filename:  ")
+fh = open(fname)
+x = 0
+for x in fh:
+    x = x.rstrip().upper()
+    print(x)
+    
+or 
+
+fn = input("Enter the file name..:")
+fh = open(fn)
+for i in fh :
+  nf = i.upper()
+  kk = nf.lstrip().rstrip()
+  print (kk)
