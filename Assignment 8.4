@@ -1,0 +1,21 @@
+fname = input("Enter file name: ")
+fh = open(fname)
+lst = list()
+for line in fh:
+print(line.rstrip())
+
+
+Solution ---
+
+fname = input("Enter file name: ")
+fh = open(fname)
+words = list()
+for line in fh:
+    words = words + line.split()
+    words.sort()
+words2=[]
+
+for word in words:
+	if word not in words2:
+		words2.append(word)
+print (words2)  
