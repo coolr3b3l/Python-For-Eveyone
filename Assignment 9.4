@@ -1,0 +1,16 @@
+Solution ------
+name = input("Enter the file name:")
+handle = open(name)
+new = dict()
+#count = 0
+for line in handle:
+ word = line.split()
+ if line.startswith("From "):
+    new[word[1]] = new.get(word[1],0) + 1
+largest = 0
+email = None
+for k,v in new.items():
+ if email is None or v > largest:
+    largest = v
+    email = k
+print (email,largest)
