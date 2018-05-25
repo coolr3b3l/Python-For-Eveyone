@@ -1,0 +1,45 @@
+Solution ------
+prompt = input("Please enter filename: ")
+open_file = open(prompt)
+
+times = dict()
+data = list()
+most_pop = 0
+
+for line in open_file:
+  if "From " in line:
+    s_line = line.split()
+    element = s_line[5]
+    sl_ele = element[:2]
+    times[sl_ele] = times.get(sl_ele, 0) + 1
+
+for key,value in times.items():
+  data.append( (key, value) )
+  
+data.sort()
+
+for key, value in data:
+  print (key, value)
+  
+  
+  or
+  
+handle = open('mbox-short.txt')
+di = list()
+words = dict()
+for line in handle:
+  if line.startswith("From "):
+    wrd = line.split()
+    wrd = wrd[5]
+    wrd = wrd.split(':')
+    word = wrd[0]
+    #print (word)
+    words[word] = words.get(word , 0) + 1
+    #for key,value in times.items():
+    #data.append( (key, value) )
+for key,value in words.items():
+  di.append((key,value))
+di.sort()
+
+for key , value in di:
+  print (key,value)
